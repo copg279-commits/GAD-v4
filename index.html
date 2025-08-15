@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal de Archivos HTML - GAD</title>
+    <!-- Incluye Tailwind CSS para un diseño moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos personalizados para el cuerpo y el contenedor principal */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Fondo gris claro */
+            display: flex;
+            flex-direction: column; /* Organiza los elementos en columna */
+            min-height: 100vh; /* Altura mínima de la vista */
+            min-height: 100svh; /* Usa svh para mejor ajuste en móviles, teniendo en cuenta las barras del navegador */
+            margin: 0;
+            padding: 0; /* Reinicia el padding global */
+            box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+            overflow-y: hidden; /* Oculta el scroll si la página se desborda ligeramente */
+            -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS */
+        }
+        /* Ajuste para que el contenido principal ocupe el espacio restante */
+        .main-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra horizontalmente el contenido */
+            flex-grow: 1; /* Permite que el contenedor crezca para empujar el footer hacia abajo */
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+            padding: 0px; /* Eliminado padding del wrapper */
+            box-sizing: border-box;
+        }
+        /* Ajuste para el contenedor blanco principal del menú */
+        .menu-card {
+            background-color: white;
+            padding: 0.5rem; /* Padding uniforme reducido para la tarjeta blanca */
+            border-radius: 0.75rem; /* Rounded-xl en Tailwind */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-lg en Tailwind */
+            width: 100%; /* El card siempre ocupará el 100% de su contenedor */
+            display: flex; /* Usamos flexbox para el contenido interno de la tarjeta */
+            flex-direction: column;
+            flex-grow: 1; /* Permite que la tarjeta se estire para llenar el espacio */
+        }
+
+        /* Ajuste para el título del menú */
+        h1 {
+            margin-top: 0; /* Elimina el margen superior */
+            margin-bottom: 0; /* ¡Eliminado el margen inferior! */
+            font-size: 1.8rem; /* Tamaño de fuente para mejor legibilidad en móvil */
+            line-height: 1.2; /* Reduce el interlineado del título */
+            padding-top: 0.5rem; /* Pequeño padding interno para el título */
+            padding-bottom: 0.5rem; /* Pequeño padding interno para el título */
+        }
+        @media (min-width: 640px) { /* Para pantallas más grandes que 'sm' (small) */
+            .menu-card {
+                padding: 1rem; /* Padding restaurado y uniforme en pantallas grandes */
+            }
+            h1 {
+                margin-top: 1rem; /* Margen superior adecuado en pantallas grandes */
+                margin-bottom: 1rem; /* Margen inferior adecuado */
+                font-size: 3rem; /* Tamaño de fuente original para desktop */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Sección del Logo -->
+    <header class="bg-blue-600 w-full flex justify-center items-center py-3 shadow-md"> <!-- py-3 para un tamaño medio de la franja azul -->
+        <div class="w-28 h-28 rounded-full overflow-hidden shadow-lg"> <!-- Tamaño del logo de w-28 h-28 -->
+            <img
+                src="logogad.png"
+                alt="Logo GAD"
+                class="w-full h-full object-cover block"
+            >
+        </div>
+    </header>
+
+    <div class="main-content-wrapper px-4 sm:px-8 lg:px-12"> <!-- Añadido padding horizontal al wrapper principal para controlar el ancho del contenido -->
+        <div class="menu-card">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-800">
+                Menú de Herramientas GAD
+            </h1>
+
+            <div class="grid grid-cols-2 gap-3 mt-2"> <!-- grid-cols-2 para 2 botones por fila en todas las pantallas. gap-3 para separación uniforme. mt-2 para separación del título -->
+                <!-- Los botones se ajustarán a 2 columnas por defecto (móvil y ordenador) -->
+                <!-- Se han añadido clases lg:p-6 y lg:text-xl para agrandar los botones en pantallas grandes -->
+                <!-- Botón 1 -->
+                <a href="ENLACES OSINT.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">ENLACES OSINT</span>
+                </a>
+                <!-- Botón 2 -->
+                <a href="PERMISO INTERNACIONAL DE CONDUCIR.html" class="flex items-center justify-center p-4 lg:p-6 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">PERMISOS DE CONDUCIR</span>
+                </a>
+                <!-- Botón 3 -->
+                <a href="archivo3.html" class="flex items-center justify-center p-4 lg:p-6 bg-yellow-600 hover:bg-yellow-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">Archivo 3</span>
+                </a>
+                <!-- Botón 4 -->
+                <a href="archivo4.html" class="flex items-center justify-center p-4 lg:p-6 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">Archivo 4</span>
+                </a>
+                <!-- Botón 5 -->
+                <a href="archivo5.html" class="flex items-center justify-center p-4 lg:p-6 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">Archivo 5</span>
+                </a>
+                <!-- Botón 6 -->
+                <a href="archivo6.html" class="flex items-center justify-center p-4 lg:p-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">Archivo 6</span>
+                </a>
+                <!-- Botón 7 -->
+                <a href="archivo7.html" class="flex items-center justify-center p-4 lg:p-6 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">Archivo 7</span>
+                </a>
+                <!-- Botón 8 -->
+                <a href="archivo8.html" class="flex items-center justify-center p-4 lg:p-6 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">Archivo 8</span>
+                </a>
+                <!-- Nuevos Botones -->
+                <a href="archivo9.html" class="flex items-center justify-center p-4 lg:p-6 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">Archivo 9</span>
+                </a>
+                <a href="archivo10.html" class="flex items-center justify-center p-4 lg:p-6 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 text-lg lg:text-xl">
+                    <span class="text-center">Archivo 10</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección del Pie de Página -->
+    <footer class="w-full mt-2 text-center py-3 bg-gray-200 shadow-inner text-sm sm:text-base"> <!-- py-3 para el footer un poco reducido y text-sm/text-base para la fuente -->
+        <hr class="border-t border-gray-400 w-11/12 max-w-md mx-auto mb-1"> <!-- Reducido margen inferior de la línea -->
+        <p class="font-bold text-gray-700 leading-tight">GRUPO DE ANÁLISIS DOCUMENTAL</p>
+        <p class="font-bold text-gray-700 leading-tight">POLICÍA LOCAL DE ALICANTE</p>
+        <p class="text-gray-600 leading-tight">&copy; GAD - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
