@@ -59,6 +59,11 @@
     <button id="mostrarFormularioBtn" class="w-full bg-green-600 text-white py-2 rounded-md shadow hover:bg-green-700">
       Introduzca nuevo Nº de Identificación
     </button>
+    <button id="mostrarListadoBtn" class="w-full bg-blue-500 text-white py-2 rounded-md shadow hover:bg-blue-600 mt-2">
+      Consultar Lista Completa
+    </button>
+    <div id="listadoDatos" class="mt-4 hidden text-left text-sm p-4 bg-gray-100 rounded-md">
+      </div>
     <div id="formularioNuevosDatos" class="mt-4 hidden">
         <div class="mb-4">
             <label for="nuevoNumero" class="block text-sm font-bold text-gray-700 mb-1">Número de Identificación:</label>
@@ -321,16 +326,35 @@
             });
     });
 
-
     const mostrarFormularioBtn = document.getElementById('mostrarFormularioBtn');
     const formularioNuevosDatos = document.getElementById('formularioNuevosDatos');
     const nuevoNumeroInput = document.getElementById('nuevoNumero');
     const nuevaFechaInput = document.getElementById('nuevaFecha');
     const mensajeGuardadoDiv = document.getElementById('mensajeGuardado');
 
+    const mostrarListadoBtn = document.getElementById('mostrarListadoBtn');
+    const listadoDatosDiv = document.getElementById('listadoDatos');
+
     mostrarFormularioBtn.addEventListener('click', () => {
         formularioNuevosDatos.classList.toggle('hidden');
         limpiarCampos();
+        // Ocultar el listado si el formulario se muestra
+        if (!listadoDatosDiv.classList.contains('hidden')) {
+            listadoDatosDiv.classList.add('hidden');
+        }
+    });
+
+    mostrarListadoBtn.addEventListener('click', () => {
+        // Alternar la visibilidad del listado
+        listadoDatosDiv.classList.toggle('hidden');
+
+        if (!listadoDatosDiv.classList.contains('hidden')) {
+            mostrarListado();
+            // Ocultar el formulario de añadir si el listado se muestra
+            if (!formularioNuevosDatos.classList.contains('hidden')) {
+                formularioNuevosDatos.classList.add('hidden');
+            }
+        }
     });
 
     function limpiarCampos() {
@@ -384,6 +408,34 @@
               mensajeGuardadoDiv.textContent = 'Error al guardar en Firebase: ' + error.message;
               mensajeGuardadoDiv.style.color = 'red';
           });
+    }
+    
+    function mostrarListado() {
+      // Unir los datos originales con los nuevos de Firebase
+      let datosCompletos = [...numeroFecha];
+    
+      // Formatear y ordenar los datos por fecha en orden descendente
+      const datosOrdenados = datosCompletos.map(item => {
+          const [numero, fechaStr] = item;
+          const [dia, mes, anio] = fechaStr.split('/');
+          // Crear un objeto Date para una ordenación correcta
+          const fechaObj = new Date(`${anio}-${mes}-${dia}`);
+          return {
+              fecha: fechaStr,
+              numero: numero,
+              fechaObj: fechaObj
+          };
+      }).sort((a, b) => b.fechaObj - a.fechaObj); // <--- CAMBIO CLAVE AQUÍ
+
+      // Generar el HTML para mostrar el listado
+      let htmlListado = '<p class="font-bold mb-2">Listado de números de identificación por fecha de expedición (más reciente primero):</p><ul>';
+      datosOrdenados.forEach(item => {
+          htmlListado += `<li><span class="font-bold">${item.fecha}</span> - ${item.numero}</li>`;
+      });
+      htmlListado += '</ul>';
+
+      // Insertar el HTML en el div
+      listadoDatosDiv.innerHTML = htmlListado;
     }
 
     function extraerParteRelevante(numero) {
