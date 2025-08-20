@@ -17,7 +17,7 @@
             margin: 0;
             padding: 0; /* Reinicia el padding global */
             box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
-            overflow-y: hidden; /* Oculta el scroll si la página se desborda ligeramente */
+            overflow-y: auto; /* Permite el scroll para que el footer sea visible */
             -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS */
         }
         /* Ajuste para que el contenido principal ocupe el espacio restante */
@@ -65,9 +65,7 @@
 </head>
 <body class="bg-gray-100">
 
-    <header class="bg-blue-600 w-full flex justify-center items-center py-3 shadow-md">
-        <div class="w-28 h-28 rounded-full overflow-hidden shadow-lg">
-            <img
+    <header class="bg-blue-600 w-full flex justify-center items-center py-3 shadow-md"> <div class="w-28 h-28 rounded-full overflow-hidden shadow-lg"> <img
                 src="logogad.png"
                 alt="Logo GAD"
                 class="w-full h-full object-cover block"
@@ -75,50 +73,40 @@
         </div>
     </header>
 
-    <div class="main-content-wrapper px-4 sm:px-8 lg:px-12">
-        <div class="menu-card">
+    <div class="main-content-wrapper px-4 sm:px-8 lg:px-12"> <div class="menu-card">
             <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-800">
                 Menú de Herramientas GAD
             </h1>
 
-            <div class="grid grid-cols-2 gap-3 mt-2">
-                <a href="ENLACES OSINT.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+            <div class="grid grid-cols-2 gap-3 mt-2"> <a href="ENLACES OSINT.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
                     <span class="text-center">ENLACES POR PAISES</span>
                 </a>
-                <a href="index PERMISOS DE CONDUCIR.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                <a href="index PERMISOS DE CONDUCIR.html" class="flex items-center justify-center p-4 lg:p-6 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
                     <span class="text-center">PERMISOS DE CONDUCIR</span>
                 </a>
-                <a href="index NÚMEROS DE SERIE.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                <a href="index NÚMEROS DE SERIE.html" class="flex items-center justify-center p-4 lg:p-6 bg-yellow-600 hover:bg-yellow-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
                     <span class="text-center">NÚMEROS DE SERIE</span>
                 </a>
-                <a href="index VEHÍCULOS.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                <a href="index VEHÍCULOS.html" class="flex items-center justify-center p-4 lg:p-6 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
                     <span class="text-center">VEHÍCULOS</span>
                 </a>
-                <a href="archivo5.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
-                    <span class="text-center">EN CONSTRUCCIÓN</span>
+                <a href="archivo5.html" class="flex items-center justify-center p-4 lg:p-6 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                    <span class="text-center">Archivo 5</span>
                 </a>
-                <a href="archivo6.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
-                    <span class="text-center">EN CONSTRUCCIÓN</span>
+                <a href="archivo6.html" class="flex items-center justify-center p-4 lg:p-6 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                    <span class="text-center">Archivo 6</span>
                 </a>
-                <a href="archivo7.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
-                    <span class="text-center">EN CONSTRUCCIÓN</span>
+                <a href="archivo7.html" class="flex items-center justify-center p-4 lg:p-6 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                    <span class="text-center">Archivo 7</span>
                 </a>
-                <a href="archivo8.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
-                    <span class="text-center">EN CONSTRUCCIÓN</span>
-                </a>
-                <a href="archivo9.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
-                    <span class="text-center">EN CONSTRUCCIÓN</span>
-                </a>
-                <a href="archivo10.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
-                    <span class="text-center">EN CONSTRUCCIÓN</span>
+                <a href="archivo8.html" class="flex items-center justify-center p-4 lg:p-6 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                    <span class="text-center">Archivo 8</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <footer class="w-full mt-2 text-center py-3 bg-gray-200 shadow-inner text-sm sm:text-base">
-        <hr class="border-t border-gray-400 w-11/12 max-w-md mx-auto mb-1">
-        <p class="font-bold text-gray-700 leading-tight">GRUPO DE ANÁLISIS DOCUMENTAL</p>
+    <footer class="w-full mt-2 text-center py-3 bg-gray-200 shadow-inner text-sm sm:text-base"> <hr class="border-t border-gray-400 w-11/12 max-w-md mx-auto mb-1"> <p class="font-bold text-gray-700 leading-tight">GRUPO DE ANÁLISIS DOCUMENTAL</p>
         <p class="font-bold text-gray-700 leading-tight">POLICÍA LOCAL DE ALICANTE</p>
         <p class="text-gray-600 leading-tight">&copy; GAD - Todos los derechos reservados</p>
     </footer>
