@@ -61,6 +61,17 @@
                 font-size: 3rem; /* Tamaño de fuente original para desktop */
             }
         }
+
+        /* Nueva clase para el logo que resuelve el problema */
+        .construccion-logo {
+            position: absolute;
+            right: 15px; /* Margen derecho para que no toque el borde */
+            top: 50%;
+            transform: translateY(-50%);
+            height: 75%; /* Ajusta el tamaño al 75% de la altura del botón */
+            width: auto; /* Mantiene la proporción */
+            opacity: 0.8; /* Hace el logo semitransparente para que no compita con el texto */
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -94,17 +105,21 @@
                 <a href="index VEHÍCULOS.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
                     <span class="text-center">VEHÍCULOS</span>
                 </a>
-                <a href="archivo5.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                <a href="archivo5.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative">
                     <span class="text-center">EN CONSTRUCCIÓN</span>
+                    <img src="logoconstruccion.png" alt="En construcción" class="construccion-logo">
                 </a>
-                <a href="archivo6.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                <a href="archivo6.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative">
                     <span class="text-center">EN CONSTRUCCIÓN</span>
+                    <img src="logoconstruccion.png" alt="En construcción" class="construccion-logo">
                 </a>
-                <a href="archivo7.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                <a href="archivo7.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative">
                     <span class="text-center">EN CONSTRUCCIÓN</span>
+                    <img src="logoconstruccion.png" alt="En construcción" class="construccion-logo">
                 </a>
-                <a href="archivo8.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl">
+                <a href="archivo8.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative">
                     <span class="text-center">EN CONSTRUCCIÓN</span>
+                    <img src="logoconstruccion.png" alt="En construcción" class="construccion-logo">
                 </a>
             </div>
 
@@ -148,13 +163,24 @@
                 const data = await response.json();
                 const userIp = data.ip;
 
-                // Crear una referencia al documento con la IP del usuario
-                const docRef = db.collection('visits').doc(userIp);
+                // Definir los nombres para las IPs conocidas
+                const knownIps = {
+                    '79.116.122.51': 'RAFA-MOVIL',
+                    '79.117.22.177': 'RAFA-CASA'
+                };
+
+                // Determinar el nombre a usar para el documento
+                // Si la IP es conocida, usa el nombre; de lo contrario, usa la IP
+                const docName = knownIps[userIp] || userIp;
+
+                // Crear una referencia al documento con el nombre o la IP
+                const docRef = db.collection('visits').doc(docName);
 
                 // Incrementar el contador de visitas y actualizar la fecha de la última visita
                 await docRef.set({
                     count: firebase.firestore.FieldValue.increment(1),
-                    lastVisit: firebase.firestore.FieldValue.serverTimestamp()
+                    lastVisit: firebase.firestore.FieldValue.serverTimestamp(),
+                    originalIp: userIp 
                 }, { merge: true });
 
                 // Obtener el número total de visitas (sumando los contadores) y el número de IPs únicas
