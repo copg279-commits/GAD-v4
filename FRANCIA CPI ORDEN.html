@@ -170,157 +170,6 @@
 
     let datosCPI = [];
 
-    const datosCPIOriginales = [
-      { fecha: "2018-08-06", numero: 10191919336 },
-      { fecha: "2019-01-07", numero: 10204026640 },
-      { fecha: "2019-02-26", numero: 10208196245 },
-      { fecha: "2019-04-09", numero: 10212267835 },
-      { fecha: "2019-05-01", numero: 10214149890 },
-      { fecha: "2019-05-21", numero: 10215810368 },
-      { fecha: "2019-05-27", numero: 10216323706 },
-      { fecha: "2019-06-21", numero: 10218610664 },
-      { fecha: "2019-06-22", numero: 10218644909 },
-      { fecha: "2019-07-02", numero: 10219524664 },
-      { fecha: "2019-07-11", numero: 10220479577 },
-      { fecha: "2019-07-13", numero: 10220647076 },
-      { fecha: "2019-07-16", numero: 10220899772 },
-      { fecha: "2019-07-22", numero: 10221357818 },
-      { fecha: "2019-07-26", numero: 10221830566 },
-      { fecha: "2019-08-22", numero: 10223787953 },
-      { fecha: "2019-09-05", numero: 10224960670 },
-      { fecha: "2019-10-16", numero: 10228479222 },
-      { fecha: "2019-10-22", numero: 10228996324 },
-      { fecha: "2019-11-25", numero: 10231852067 },
-      { fecha: "2020-01-02", numero: 10235029873 },
-      { fecha: "2020-01-08", numero: 10235471060 },
-      { fecha: "2020-01-09", numero: 10235600091 },
-      { fecha: "2020-01-23", numero: 10236739943 },
-      { fecha: "2020-02-03", numero: 10237757185 },
-      { fecha: "2020-02-07", numero: 10238209901 },
-      { fecha: "2020-02-22", numero: 10239507762 },
-      { fecha: "2020-03-09", numero: 10240903403 },
-      { fecha: "2020-04-07", numero: 10242041531 },
-      { fecha: "2020-05-08", numero: 10242811561 },
-      { fecha: "2020-05-12", numero: 10242997194 },
-      { fecha: "2020-06-05", numero: 10244827382 },
-      { fecha: "2020-06-10", numero: 10245324376 },
-      { fecha: "2020-06-13", numero: 10245637217 },
-      { fecha: "2020-06-17", numero: 10246068992 },
-      { fecha: "2020-06-23", numero: 10246653801 },
-      { fecha: "2020-06-26", numero: 10247085667 },
-      { fecha: "2020-07-01", numero: 10247636610 },
-      { fecha: "2020-07-06", numero: 10248147658 },
-      { fecha: "2020-07-13", numero: 10248843132 },
-      { fecha: "2020-07-15", numero: 10248966257 },
-      { fecha: "2020-08-01", numero: 10250840147 },
-      { fecha: "2020-08-08", numero: 10251462328 },
-      { fecha: "2020-08-11", numero: 10251637212 },
-      { fecha: "2020-08-13", numero: 10251836608 },
-      { fecha: "2020-08-20", numero: 10252367297 },
-      { fecha: "2020-08-23", numero: 10252575134 },
-      { fecha: "2020-09-09", numero: 10254066257 },
-      { fecha: "2020-09-09", numero: 10254113785 },
-      { fecha: "2020-10-30", numero: 10259051547 },
-      { fecha: "2020-11-06", numero: 10259742451 },
-      { fecha: "2020-12-04", numero: 10262045545 },
-      { fecha: "2020-12-18", numero: 10263236812 },
-      { fecha: "2020-12-22", numero: 10263572813 },
-      { fecha: "2021-01-03", numero: 10264289010 },
-      { fecha: "2021-01-04", numero: 10264353220 },
-      { fecha: "2021-01-05", numero: 10264508246 },
-      { fecha: "2021-01-07", numero: 10264691051 },
-      { fecha: "2021-01-08", numero: 10264747160 },
-      { fecha: "2021-01-09", numero: 10264862384 },
-      { fecha: "2021-01-18", numero: 10265621015 },
-      { fecha: "2021-01-20", numero: 10265865869 },
-      { fecha: "2021-01-21", numero: 10265941463 },
-      { fecha: "2021-02-09", numero: 10267606719 },
-      { fecha: "2021-02-18", numero: 10268504383 },
-      { fecha: "2021-03-05", numero: 10269996075 },
-      { fecha: "2021-03-09", numero: 10270305851 },
-      { fecha: "2021-03-17", numero: 10271084455 },
-      { fecha: "2021-03-22", numero: 10271563730 },
-      { fecha: "2021-04-12", numero: 10273599712 },
-      { fecha: "2021-04-22", numero: 10274543017 },
-      { fecha: "2021-05-11", numero: 10276289812 },
-      { fecha: "2021-05-22", numero: 10277206502 },
-      { fecha: "2021-05-25", numero: 10277393805 },
-      { fecha: "2021-05-26", numero: 10277484501 },
-      { fecha: "2021-06-01", numero: 10277989543 },
-      { fecha: "2021-06-08", numero: 10278679606 },
-      { fecha: "2021-06-11", numero: 10279068079 },
-      { fecha: "2021-06-14", numero: 10279270519 },
-      { fecha: "2021-06-18", numero: 10279664943 },
-      { fecha: "2021-06-22", numero: 10280032497 },
-      { fecha: "2021-06-24", numero: 10280310274 },
-      { fecha: "2021-06-24", numero: 10280317957 },
-      { fecha: "2021-07-01", numero: 10281012555 },
-      { fecha: "2021-07-07", numero: 10281514683 },
-      { fecha: "2021-07-08", numero: 10281650185 },
-      { fecha: "2021-07-13", numero: 10282072120 },
-      { fecha: "2021-07-19", numero: 10282518778 },
-      { fecha: "2021-07-22", numero: 10282770828 },
-      { fecha: "2021-07-28", numero: 10283357999 },
-      { fecha: "2021-08-05", numero: 10284024386 },
-      { fecha: "2022-01-12", numero: 10297084978 },
-      { fecha: "2022-03-16", numero: 10302495450 },
-      { fecha: "2022-04-23", numero: 10305626703 },
-      { fecha: "2022-05-27", numero: 10308406866 },
-      { fecha: "2022-06-07", numero: 10309210126 },
-      { fecha: "2022-08-18", numero: 10314648491 },
-      { fecha: "2022-10-18", numero: 10319310861 },
-      { fecha: "2023-01-28", numero: 10327299367 },
-      { fecha: "2023-02-18", numero: 10329065365 },
-      { fecha: "2023-04-28", numero: 10334952688 },
-      { fecha: "2023-05-19", numero: 10336478744 },
-      { fecha: "2023-06-29", numero: 10339923205 },
-      { fecha: "2023-07-26", numero: 10342116433 },
-      { fecha: "2023-08-04", numero: 10342907623 },
-      { fecha: "2023-08-09", numero: 10343174028 },
-      { fecha: "2023-08-04", numero: 10342907623 },
-      { fecha: "2023-10-13", numero: 10348194002 },
-      { fecha: "2023-12-14", numero: 10353304772 },
-      { fecha: "2024-01-26", numero: 10356641340 },
-      { fecha: "2024-03-26", numero: 10361681184 },
-      { fecha: "2024-05-22", numero: 10366201304 },
-      { fecha: "2024-06-07", numero: 10367709395 },
-      { fecha: "2024-06-10", numero: 10367861983 },
-      { fecha: "2024-06-13", numero: 10368242072 },
-      { fecha: "2024-06-27", numero: 10369442506 },
-      { fecha: "2024-07-02", numero: 10369898501 },
-      { fecha: "2024-07-08", numero: 10370326713 },
-      { fecha: "2024-07-16", numero: 10371050184 },
-      { fecha: "2024-09-17", numero: 10375789077 },
-      { fecha: "2024-09-27", numero: 10376679633 },
-      { fecha: "2024-09-29", numero: 10376759017 },
-      { fecha: "2024-10-17", numero: 10378401366 },
-      { fecha: "2024-10-23", numero: 10378831659 },
-      { fecha: "2024-11-04", numero: 10379771154 },
-      { fecha: "2024-11-07", numero: 10380060979 },
-      { fecha: "2024-11-10", numero: 10380290663 },
-      { fecha: "2024-11-13", numero: 10380556853 },
-      { fecha: "2024-12-27", numero: 10384296642 },
-      { fecha: "2025-01-03", numero: 10384726515 },
-      { fecha: "2025-01-14", numero: 10385643546 },
-      { fecha: "2025-01-24", numero: 10386510526 },
-      { fecha: "2025-01-27", numero: 10386668860 },
-      { fecha: "2025-01-28", numero: 10386778886 },
-      { fecha: "2025-01-29", numero: 10386855208 },
-      { fecha: "2025-02-02", numero: 10387250551 },
-      { fecha: "2025-05-21", numero: 10396620230 },
-      { fecha: "2025-03-12", numero: 10390614151 },
-      { fecha: "2025-03-21", numero: 10391450128 },
-      { fecha: "2025-04-09", numero: 10393216574 },
-      { fecha: "2025-04-28", numero: 10394843453 },
-      { fecha: "2025-05-15", numero: 10396192640 },
-      { fecha: "2025-05-30", numero: 10397448242 },
-      { fecha: "2025-06-11", numero: 10398352834 },
-      { fecha: "2025-06-24", numero: 10399349061 },
-      { fecha: "2025-07-10", numero: 10400893817 },
-      { fecha: "2025-07-23", numero: 10401844641 },
-      { fecha: "2025-07-28", numero: 10402260107 }
-    ];
-
     cpiRef.once('value', (snapshot) => {
       if (!snapshot.exists()) {
         console.log("Base de datos vacía. Subiendo los datos originales...");
@@ -384,6 +233,9 @@
         formularioCpi.classList.add('hidden');
         estadisticasCpiDiv.classList.add('hidden');
         limpiarCampos();
+        if (!cpiDataTable.classList.contains('hidden')) {
+            renderizarTablaCpi();
+        }
     });
     
     toggleEstadisticasBtn.addEventListener('click', () => {
@@ -510,12 +362,12 @@
         mesSelector.value = '';
         anioSelector.value = '';
     }
-
+    
     function guardarNuevoCpi() {
         const nuevoNumero = parseInt(nuevoNumeroCpiInput.value);
-        const nuevaFecha = nuevaFechaCpiInput.value;
+        const nuevaFechaStr = nuevaFechaCpiInput.value;
 
-        if (isNaN(nuevoNumero) || !nuevaFecha) {
+        if (isNaN(nuevoNumero) || !nuevaFechaStr) {
             mensajeGuardadoDiv.textContent = 'Por favor, introduce un número y una fecha válidos.';
             mensajeGuardadoDiv.style.color = 'orange';
             return;
@@ -528,10 +380,28 @@
             return;
         }
 
-        const nuevaFechaISO = new Date(nuevaFecha).toISOString();
+        const datosOrdenadosPorNumero = datosCPI.sort((a, b) => a.numero - b.numero);
+        
+        const datoAnterior = datosOrdenadosPorNumero.filter(dato => dato.numero < nuevoNumero).pop();
+        const datoPosterior = datosOrdenadosPorNumero.find(dato => dato.numero > nuevoNumero);
+
+        const nuevaFecha = new Date(nuevaFechaStr);
+
+        if (datoAnterior && nuevaFecha < datoAnterior.fecha) {
+            mensajeGuardadoDiv.innerHTML = `<span style="color: red; font-weight: bold;">ERROR: Número demasiado alto para esa fecha.<br>!!! POSIBLE DOCUMENTO FALSO !!!</span>`;
+            mensajeGuardadoDiv.style.color = 'red';
+            return;
+        }
+
+        if (datoPosterior && nuevaFecha > datoPosterior.fecha) {
+            mensajeGuardadoDiv.innerHTML = `<span style="color: red; font-weight: bold;">ERROR: Número demasiado bajo para esa fecha.<br>!!! POSIBLE DOCUMENTO FALSO !!!</span>`;
+            mensajeGuardadoDiv.style.color = 'red';
+            return;
+        }
+        
         const nuevoDato = {
             numero: nuevoNumero,
-            fecha: nuevaFechaISO
+            fecha: nuevaFechaStr
         };
 
         cpiRef.push(nuevoDato)
@@ -554,7 +424,12 @@
     function renderizarTablaCpi() {
       cpiListDiv.innerHTML = '';
       
-      const datosOrdenados = datosCPI.sort((a, b) => b.numero - a.numero);
+      const datosOrdenados = datosCPI.sort((a, b) => {
+          if (a.fecha.getTime() === b.fecha.getTime()) {
+              return b.numero - a.numero; // Mayor número primero para la misma fecha
+          }
+          return b.numero - a.numero; // Mayor número primero
+      });
       
       datosOrdenados.forEach(dato => {
         const fila = document.createElement('tr');
