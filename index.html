@@ -61,8 +61,8 @@
                 font-size: 3rem; /* Tamaño de fuente original para desktop */
             }
         }
-
-        /* Nueva clase para el logo que resuelve el problema */
+        
+        /* Estilos generales para el logo de construcción y multa */
         .construccion-logo {
             position: absolute;
             right: 15px; /* Margen derecho para que no toque el borde */
@@ -70,21 +70,34 @@
             transform: translateY(-50%);
             height: 75%; /* Ajusta el tamaño al 75% de la altura del botón */
             width: auto; /* Mantiene la proporción */
-            opacity: 0.8; /* Hace el logo semitransparente para que no compita con el texto */
+            opacity: 0.8; /* Hace el logo semitransparente */
+        }
+        /* Estilos específicos para pantallas móviles (menos de 640px) */
+        @media (max-width: 639px) { /* Esto es para 'sm' breakpoint en Tailwind */
+            .construccion-logo {
+                height: 40%; /* Más pequeño en móviles */
+                right: 5px; /* Más pegado al borde en móviles */
+                opacity: 0.7; /* Ligeramente más transparente */
+                /* Posicionamiento en la esquina inferior derecha */
+                top: unset; /* Desactiva la posición superior */
+                transform: unset; /* Desactiva la transformación */
+                bottom: 5px; /* Lo ancla a 5px del borde inferior */
+            }
+            /* Ajuste del padding del botón para el texto */
+            .btn-con-logo {
+                padding-right: 2.5rem; /* Deja espacio a la derecha para el logo */
+                padding-bottom: 2rem; /* Y espacio en la parte inferior */
+            }
         }
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <header class="bg-blue-600 w-full flex justify-center items-center py-3 shadow-md">
-        <div class="w-28 h-28 rounded-full overflow-hidden shadow-lg">
-            <img
-                src="logogad.png"
-                alt="Logo GAD"
-                class="w-full h-full object-cover block"
-            >
-        </div>
-    </header>
+<header class="bg-blue-600 w-full flex justify-center items-center py-2">
+    <div class="w-40 h-40 rounded-full overflow-hidden shadow-lg">
+        <img src="logogad.png" alt="Logo GAD" class="w-full h-full object-cover block">
+    </div>
+</header>
 
     <div class="main-content-wrapper px-4 sm:px-8 lg:px-12">
         <div class="menu-card">
@@ -108,15 +121,15 @@
                 <a href="index EXTRANJERÍA.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative">
                     <span class="text-center">EXTRANJERÍA</span>
                 </a>
-                <a href="archivo6.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative">
+                <a href="archivo6.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative btn-con-logo">
                     <span class="text-center">EN CONSTRUCCIÓN</span>
                     <img src="logoconstruccion.png" alt="En construcción" class="construccion-logo">
                 </a>
-                <a href="archivo7.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative">
-                    <span class="text-center">EN CONSTRUCCIÓN</span>
-                    <img src="logoconstruccion.png" alt="En construcción" class="construccion-logo">
+                <a href="INFRACCIONES.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative btn-con-logo">
+                    <span class="text-center">CODIFICADO INFRACCIONES GAD</span>
+                    <img src="logomulta.png" alt="Logo de multa" class="construccion-logo">
                 </a>
-                <a href="archivo8.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative">
+                <a href="archivo8.html" class="flex items-center justify-center p-4 lg:p-6 bg-blue-400 hover:bg-blue-500 text-white font-bold rounded-lg shadow-md transition-all duration-300 ease-in-out text-lg lg:text-xl relative btn-con-logo">
                     <span class="text-center">EN CONSTRUCCIÓN</span>
                     <img src="logoconstruccion.png" alt="En construcción" class="construccion-logo">
                 </a>
@@ -145,7 +158,7 @@
             buttons.forEach(button => {
                 const href = button.getAttribute('href');
                 // Comprobamos si el href NO es uno de los archivos 'en construcción'
-                if (href !== 'archivo6.html' && href !== 'archivo7.html' && href !== 'archivo8.html') {
+                if (href !== 'archivo6.html' && href !== 'archivo8.html' && href !== 'INFRACCIONES.html') {
                     // Si no lo es, actualizamos el color a bg-blue-600 y el hover a bg-blue-700
                     button.classList.remove('bg-blue-400', 'hover:bg-blue-500');
                     button.classList.add('bg-blue-600', 'hover:bg-blue-700');
